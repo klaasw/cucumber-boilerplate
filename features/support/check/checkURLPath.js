@@ -4,12 +4,12 @@
  *                                 expected value or not
  * @param  {String}   expectedPath The expected path to match against
  */
-module.exports = (falseCase, expectedPath) => {
+module.exports = async (falseCase, expectedPath) => {
     /**
      * The URL of the current browser window
      * @type {String}
      */
-    let currentUrl = browser.url().value.replace(/http(s?):\/\//, '');
+    let currentUrl = await browser.url().value.replace(/http(s?):\/\//, '');
 
     /**
      * The base URL of the current browser window

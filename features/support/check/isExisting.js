@@ -3,12 +3,12 @@
  * @param  {String}   selector  Element selector
  * @param  {String}   falseCase Whether to check if the element exists or not
  */
-module.exports = (selector, falseCase) => {
+module.exports = async (selector, falseCase) => {
     /**
      * Elements found in the DOM
      * @type {Object}
      */
-    const elements = browser.elements(selector).value;
+    const elements = await browser.elements(selector).value;
 
     if (falseCase) {
         expect(elements).to.have

@@ -4,13 +4,13 @@
  * @param  {String}   obsolete    Indicator for the type (window or tab) unused
  */
 /* eslint-disable no-unused-vars */
-module.exports = (expectedUrl, obsolete) => {
+module.exports = async (expectedUrl, obsolete) => {
 /* eslint-enable no-unused-vars */
     /**
      * All the current window handles
      * @type {Object}
      */
-    const windowHandles = browser.windowHandles().value;
+    const windowHandles = await browser.windowHandles().value;
 
     expect(windowHandles).length.to.not.equal(1, 'A popup was not opened');
 
@@ -21,7 +21,7 @@ module.exports = (expectedUrl, obsolete) => {
     const lastWindowHandle = windowHandles.slice(-1);
 
     // Make sure we focus on the last opened window handle
-    browser.window(lastWindowHandle[0]);
+    await browser.window(lastWindowHandle[0]);
 
     /**
      * Get the URL of the current browser window
@@ -32,5 +32,5 @@ module.exports = (expectedUrl, obsolete) => {
     expect(windowUrl).to
         .contain(expectedUrl, 'The popup has a incorrect url');
 
-    browser.close();
+    await browser.close();
 };

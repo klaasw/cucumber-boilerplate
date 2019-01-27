@@ -3,6 +3,6 @@
  * @param  {String}   source      The selector for the source element
  * @param  {String}   destination The selector for the destination element
  */
-module.exports = (source, destination) => {
-    browser.dragAndDrop(source, destination);
+module.exports = async (source, destination) => {
+    await browser.dragAndDrop(source, destination);
 };

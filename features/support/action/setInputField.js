@@ -7,7 +7,7 @@ const checkIfElementExists = require('../lib/checkIfElementExists');
  * @param  {String}   value   The value to set the element to
  * @param  {String}   element Element selector
  */
-module.exports = (method, value, element) => {
+module.exports = async (method, value, element) => {
     /**
      * The command to perform on the browser object (addValue or setValue)
      * @type {String}
@@ -16,11 +16,11 @@ module.exports = (method, value, element) => {
 
     let checkValue = value;
 
-    checkIfElementExists(element, false, 1);
+    await checkIfElementExists(element, false, 1);
 
     if (!value) {
         checkValue = '';
     }
 
-    browser[command](element, checkValue);
+    await browser[command](element, checkValue);
 };

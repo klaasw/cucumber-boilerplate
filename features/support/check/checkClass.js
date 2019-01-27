@@ -5,12 +5,12 @@
  *                                      or not ('has', 'does not have')
  * @param  {String}   expectedClassName The class name to check
  */
-module.exports = (elem, falseCase, expectedClassName) => {
+module.exports = async (elem, falseCase, expectedClassName) => {
     /**
      * List of all the classes of the element
      * @type {Array}
      */
-    const classesList = browser.getAttribute(elem, 'className').split(' ');
+    const classesList = await browser.getAttribute(elem, 'className').split(' ');
 
     if (falseCase === 'does not have') {
         expect(classesList).to.not

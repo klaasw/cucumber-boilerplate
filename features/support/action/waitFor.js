@@ -8,7 +8,7 @@
  *                                             existence)
  */
 module.exports =
-(elem, ms, falseState, state) => {
+async (elem, ms, falseState, state) => {
     /**
      * Maximum number of milliseconds to wait, default 3000
      * @type {Int}
@@ -53,5 +53,5 @@ module.exports =
         boolFalseState = false;
     }
 
-    browser[command](elem, intMs, boolFalseState);
+    await browser[command](elem, intMs, boolFalseState);
 };

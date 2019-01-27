@@ -1,6 +1,6 @@
 const checkContainsAnyText = require('./checkContainsAnyText');
 
-module.exports = (elementType, element, falseCase) => {
+module.exports = async (elementType, element, falseCase) => {
     let newFalseCase = true;
 
     if (typeof falseCase === 'function') {
@@ -9,5 +9,5 @@ module.exports = (elementType, element, falseCase) => {
         newFalseCase = false;
     }
 
-    checkContainsAnyText(elementType, element, newFalseCase);
+    await checkContainsAnyText(elementType, element, newFalseCase);
 };

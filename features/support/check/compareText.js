@@ -5,18 +5,18 @@
  *                              elements match or not
  * @param  {String}   element2  Element selector for the second element
  */
-module.exports = (element1, falseCase, element2) => {
+module.exports = async (element1, falseCase, element2) => {
     /**
      * The text of the first element
      * @type {String}
      */
-    const text1 = browser.getText(element1);
+    const text1 = await browser.getText(element1);
 
     /**
      * The text of the second element
      * @type {String}
      */
-    const text2 = browser.getText(element2);
+    const text2 = await browser.getText(element2);
 
     if (falseCase) {
         expect(text1).to.not.equal(

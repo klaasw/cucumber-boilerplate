@@ -5,12 +5,12 @@
  * @param  {Number}  exactly  Check if the element exists exactly this number
  *                            of times
  */
-module.exports = (element, falsCase, exactly) => {
+module.exports = async (element, falsCase, exactly) => {
     /**
      * The number of elements found in the DOM
      * @type {Int}
      */
-    const nrOfElements = browser.elements(element).value;
+    const nrOfElements = await browser.elements(element).value;
 
     if (falsCase === true) {
         expect(nrOfElements).to.have.lengthOf(

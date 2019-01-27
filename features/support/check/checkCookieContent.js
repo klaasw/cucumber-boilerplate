@@ -5,12 +5,12 @@
  *                                  or not
  * @param  {String}   expectedValue The value to check against
  */
-module.exports = (name, falseCase, expectedValue) => {
+module.exports = async (name, falseCase, expectedValue) => {
     /**
      * The cookie retrieved from the browser object
      * @type {Object}
      */
-    const cookie = browser.getCookie(name);
+    const cookie = await browser.getCookie(name);
 
     expect(cookie.name).to.equal(
         name,

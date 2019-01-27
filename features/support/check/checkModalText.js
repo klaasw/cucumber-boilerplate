@@ -5,13 +5,13 @@
  * @param  {String}   falseState    Whether to check if the text matches or not
  * @param  {String}   expectedText  The text to check against
  */
-module.exports = (modalType, falseState, expectedText) => {
+module.exports = async (modalType, falseState, expectedText) => {
     try {
         /**
          * The text of the current modal
          * @type {String}
          */
-        const text = browser.alertText();
+        const text = await browser.alertText();
 
         if (falseState) {
             expect(text).to.not.equal(

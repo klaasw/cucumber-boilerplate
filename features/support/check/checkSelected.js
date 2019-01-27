@@ -4,12 +4,12 @@
  * @param  {String}   falseCase Whether to check if the element is elected or
  *                              not
  */
-module.exports = (element, falseCase) => {
+module.exports = async (element, falseCase) => {
     /**
      * The selected state
      * @type {Boolean}
      */
-    const isSelected = browser.isSelected(element);
+    const isSelected = await browser.isSelected(element);
 
     if (falseCase) {
         expect(isSelected).to.not

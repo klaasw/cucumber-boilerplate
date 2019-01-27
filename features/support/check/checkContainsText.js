@@ -6,7 +6,7 @@
  *                                  the given text or not
  * @param  {String}   expectedText  The text to check against
  */
-module.exports = (elementType, element, falseCase, expectedText) => {
+module.exports = async (elementType, element, falseCase, expectedText) => {
     /**
      * The command to perform on the browser object
      * @type {String}
@@ -15,7 +15,7 @@ module.exports = (elementType, element, falseCase, expectedText) => {
 
     if (
         elementType === 'button' ||
-        browser.getAttribute(element, 'value') === null
+        await browser.getAttribute(element, 'value') === null
     ) {
         command = 'getText';
     }

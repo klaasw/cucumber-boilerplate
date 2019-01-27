@@ -3,12 +3,12 @@
  * @param  {String}   type Type of navigation (url or site)
  * @param  {String}   page The URL to navigate to
  */
-module.exports = (type, page) => {
+module.exports = async (type, page) => {
     /**
      * The URL to navigate to
      * @type {String}
      */
-    const url = (type === 'url') ? page : browser.options.baseUrl + page;
+    const url = (type === 'url') ? page : await browser.options.baseUrl + page;
 
-    browser.url(url);
+    await browser.url(url);
 };

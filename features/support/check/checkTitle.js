@@ -4,12 +4,12 @@
  *                                  expected value or not
  * @param  {Type}     expectedTitle The expected title
  */
-module.exports = (falseCase, expectedTitle) => {
+module.exports = async (falseCase, expectedTitle) => {
     /**
      * The title of the current browser window
      * @type {String}
      */
-    const title = browser.getTitle();
+    const title = await browser.getTitle();
 
     if (falseCase) {
         expect(title).to.not

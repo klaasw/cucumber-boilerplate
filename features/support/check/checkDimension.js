@@ -6,12 +6,12 @@
  * @param  {String}   expectedSize Expected size
  * @param  {String}   dimension    Dimension to check (broad or tall)
  */
-module.exports = (elem, falseCase, expectedSize, dimension) => {
+module.exports = async (elem, falseCase, expectedSize, dimension) => {
     /**
      * The size of the given element
      * @type {Object}
      */
-    const elementSize = browser.getElementSize(elem);
+    const elementSize = await browser.getElementSize(elem);
 
     /**
      * Parsed size to check for

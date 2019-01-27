@@ -25,10 +25,10 @@
     "selenium"
   ],
   "author": "Klaas Wuellner <klaas.wuellner@gmail.com",
-  "contributors": [
-  ],
+  "contributors": [],
   "license": "MIT",
   "dependencies": {
+    "@wdio/sync": "^5.4.6",
     "chai": "^4.2.0",
     "cucumber": "^5.1.0",
     "webdriverio": "^5.4.7"

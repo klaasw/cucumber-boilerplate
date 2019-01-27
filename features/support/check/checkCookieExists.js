@@ -4,12 +4,12 @@
  * @param  {[type]}   falseCase Whether or not to check if the cookie exists or
  *                              not
  */
-module.exports = (name, falseCase) => {
+module.exports = async (name, falseCase) => {
     /**
      * The cookie as retrieved from the browser
      * @type {Object}
      */
-    const cookie = browser.getCookie(name);
+    const cookie = await browser.getCookie(name);
 
     if (falseCase) {
         expect(cookie).to.equal(

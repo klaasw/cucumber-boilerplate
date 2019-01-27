@@ -6,12 +6,12 @@
  *
  * @todo  merge with waitfor
  */
-module.exports = (elem, falseCase) => {
+module.exports = async (elem, falseCase) => {
     /**
      * Maximum number of milliseconds to wait for
      * @type {Int}
      */
     const ms = 10000;
 
-    browser.waitForVisible(elem, ms, !!falseCase);
+    await browser.waitForVisible(elem, ms, !!falseCase);
 };

@@ -4,12 +4,12 @@
  * @param  {String}   falseCase Whether to check if the given element is enabled
  *                              or not
  */
-module.exports = (element, falseCase) => {
+module.exports = async (element, falseCase) => {
     /**
      * The enabled state of the given element
      * @type {Boolean}
      */
-    const isEnabled = browser.isEnabled(element);
+    const isEnabled = await browser.isEnabled(element);
 
     if (falseCase) {
         expect(isEnabled).to.not

@@ -6,7 +6,7 @@ const checkIfElementExists = require('../lib/checkIfElementExists');
  * @param  {String}   type    Type of the element (link or selector)
  * @param  {String}   element Element selector
  */
-module.exports = (action, type, element) => {
+module.exports = async (action, type, element) => {
     /**
      * Element to perform the action on
      * @type {String}
@@ -19,7 +19,7 @@ module.exports = (action, type, element) => {
      */
     const method = (action === 'click') ? 'click' : 'doubleClick';
 
-    checkIfElementExists(elem);
+    await checkIfElementExists(elem);
 
-    browser[method](elem);
+    await browser[method](elem);
 };

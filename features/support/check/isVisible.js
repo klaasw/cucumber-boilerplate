@@ -3,12 +3,12 @@
  * @param  {String}   element   Element selector
  * @param  {String}   falseCase Check for a visible or a hidden element
  */
-module.exports = (element, falseCase) => {
+module.exports = async (element, falseCase) => {
     /**
      * Visible state of the give element
      * @type {String}
      */
-    const isVisible = browser.isVisible(element);
+    const isVisible = await browser.isVisible(element);
 
     if (falseCase) {
         expect(isVisible).to.not
