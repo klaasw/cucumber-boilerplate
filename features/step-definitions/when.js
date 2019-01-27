@@ -1,22 +1,21 @@
-import clearInputField from '../support/action/clearInputField';
-import clickElement from '../support/action/clickElement';
-import closeLastOpenedWindow from '../support/action/closeLastOpenedWindow';
-import deleteCookie from '../support/action/deleteCookie';
-import dragElement from '../support/action/dragElement';
-import focusLastOpenedWindow from '../support/action/focusLastOpenedWindow';
-import handleModal from '../support/action/handleModal';
-import moveToElement from '../support/action/moveToElement';
-import pause from '../support/action/pause';
-import pressButton from '../support/action/pressButton';
-import scroll from '../support/action/scroll';
-import selectOption from '../support/action/selectOption';
-import selectOptionByIndex from '../support/action/selectOptionByIndex';
-import setCookie from '../support/action/setCookie';
-import setInputField from '../support/action/setInputField';
-import setPromptText from '../support/action/setPromptText';
-import submitForm from '../support/action/submitForm';
-
 const { When } = require('cucumber');
+const clearInputField = require('../support/action/clearInputField');
+const clickElement = require('../support/action/clickElement');
+const closeLastOpenedWindow = require('../support/action/closeLastOpenedWindow');
+const deleteCookie = require('../support/action/deleteCookie');
+const dragElement = require('../support/action/dragElement');
+const focusLastOpenedWindow = require('../support/action/focusLastOpenedWindow');
+const handleModal = require('../support/action/handleModal');
+const moveToElement = require('../support/action/moveToElement');
+const pause = require('../support/action/pause');
+const pressButton = require('../support/action/pressButton');
+const scroll = require('../support/action/scroll');
+const selectOption = require('../support/action/selectOption');
+const selectOptionByIndex = require('../support/action/selectOptionByIndex');
+const setCookie = require('../support/action/setCookie');
+const setInputField = require('../support/action/setInputField');
+const setPromptText = require('../support/action/setPromptText');
+const submitForm = require('../support/action/submitForm');
 
 
 When(
