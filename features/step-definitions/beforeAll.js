@@ -8,12 +8,12 @@ const options = {
     port: 4444,
     path: '/wd/hub',
     desiredCapabilities: {
-        browserName: 'chrome'
+        browserName: 'chrome',
     },
     sync: true,
     // Level of logging verbosity: silent | verbose | command | data | result | error
     logLevel: 'verbose',
-    baseUrl: 'http://10.162.1.64:8080'
+    baseUrl: 'http://10.162.1.64:8080',
 };
 //
 
@@ -21,7 +21,7 @@ global.expect = expect;
 
 setDefaultTimeout(20000);
 
-BeforeAll(async () => {
+BeforeAll(() => {
     global.browser = remote(options).init();
     return global.browser;
 });

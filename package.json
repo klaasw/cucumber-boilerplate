@@ -1,26 +1,22 @@
 {
   "name": "cucumber-wdio-boilerplate",
   "version": "1.0.0",
-  "description": "Boilerplate project to run Cucumber Tests with WebdriverIO",
-  "homepage": "https://github.com/webdriverio/cucumber-boilerplate",
+  "description": "Boilerplate project to run Cucumber Tests with WebdriverIO. Forked from https://github.com/webdriverio/cucumber-boilerplate",
+  "homepage": "https://github.com/klaasw/cucumber-boilerplate",
   "scripts": {
-    "clean": "read -p \"Are you sure you want to clean the project? [y/n] \" REPLY; if [[ $REPLY =~ ^[Yy]$ ]]; then rm -R .git .github demo-app test .codeclimate.yml .travis.yml jest.json wdio.BUILD.conf.js src/features/**; fi",
-    "local-webserver": "forever start -s ./node_modules/.bin/http-server ./demo-app -s",
-    "test": "npm run test:validate && npm run test:unit && npm run test:features",
-    "test:features": "npm run local-webserver & (wdio wdio.BUILD.conf.js; wdio_ret=$?; forever stopall; exit $wdio_ret)",
-    "test:unit": "jest --config=jest.json",
-    "test:validate": "eslint 'src/**/*.js' 'test/**/*.js!(setup.js)'"
+    "test": "node ./node_modules/.bin/cucumber-js -p report; node ./generateHTML.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/webdriverio/cucumber-boilerplate.git"
+    "url": "https://github.com/klaasw/cucumber-boilerplate"
   },
   "bugs": {
-    "url": "https://github.com/webdriverio/cucumber-boilerplate/issues"
+    "url": "https://github.com/klaasw/cucumber-boilerplate"
   },
   "keywords": [
     "webdriverio",
     "cucumber",
+    "report",
     "test",
     "selenium"
   ],
@@ -28,17 +24,14 @@
   "contributors": [],
   "license": "MIT",
   "dependencies": {
-    "@wdio/sync": "^5.4.6",
     "chai": "^4.2.0",
     "cucumber": "^5.1.0",
+    "cucumber-html-reporter": "^4.0.4",
     "webdriverio": "^4.14.2"
   },
   "devDependencies": {
     "eslint": "~5.0.0",
     "eslint-config-airbnb-base": "~13.0.0",
-    "eslint-plugin-import": "~2.13.0",
-    "forever": "~0.15.3",
-    "http-server": "~0.11.0",
-    "jest": "~23.0.0"
+    "eslint-plugin-import": "~2.13.0"
   }
 }
