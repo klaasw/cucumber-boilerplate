@@ -3,7 +3,12 @@ Cucumber Boilerplate for Browser Automation with WebdriverIO
 
 Forked from https://github.com/webdriverio/cucumber-boilerplate
 This modified project runs cucumber features with the cucumber-js runner instead of WebdriverIO runner.
-It is also used to generate reports with the cucumber-html-reporter. 
+It is also used to generate reports with the cucumber-html-reporter.
+
+Run test with:
+`npm test` or `npx cucumber-js`
+
+
 
 Removed Jest Test
 
