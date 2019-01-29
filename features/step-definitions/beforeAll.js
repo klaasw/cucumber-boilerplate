@@ -1,4 +1,5 @@
 const { expect } = require('chai');
+const should = require('chai').should();
 const { BeforeAll, setDefaultTimeout } = require('cucumber');
 const { remote } = require('webdriverio');
 
@@ -18,6 +19,7 @@ const options = {
 //
 
 global.expect = expect;
+global.should = should;
 
 setDefaultTimeout(20000);
 
